@@ -1,27 +1,49 @@
-# InputsProyect
+# Mi Aplicación Angular de Suma
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.4.
+Esta es una aplicación Angular simple que permite a los usuarios ingresar valores numéricos, realizar sumas acumulativas y mostrar el resultado en tiempo real. La aplicación consta de varios componentes y un servicio para lograr esta funcionalidad.
 
-## Development server
+## Componentes
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Componente de Entrada (InputRecep)
 
-## Code scaffolding
+- **Función Principal**: Permite a los usuarios ingresar valores numéricos.
+- **Características**:
+  - Inicializa en blanco.
+  - Muestra "Número" como marcador de posición.
+  - Al hacer clic, el valor se borra para permitir la entrada de un nuevo número.
+- **Acción**: Al hacer clic en "Enviar", el valor se suma a una acumulación y se borra del campo de entrada.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Componente de Mostrar Texto (ShowText)
 
-## Build
+- **Función Principal**: Muestra el resultado de la suma acumulativa en tiempo real.
+- **Características**:
+  - Muestra el valor de la suma acumulada.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Servicio (InputService)
 
-## Running unit tests
+- **Función Principal**: Gestiona la lógica de sumar valores y mantener la suma acumulada.
+- **Características**:
+  - Utiliza un BehaviorSubject para mantener la suma acumulada actual.
+  - Exponer la suma acumulada como un Observable.
+  - Permite la actualización de la suma acumulada.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Módulo Principal (AppModule)
 
-## Running end-to-end tests
+- **Función Principal**: Configura y organiza los componentes y servicios principales de la aplicación.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Uso
 
-## Further help
+1. Ingrese un valor numérico en el componente de entrada.
+2. Haga clic en "Enviar" para agregar el valor a la suma acumulativa.
+3. El valor ingresado se borra automáticamente, y la suma acumulativa se muestra en el componente de Mostrar Texto.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Requisitos
+
+- Node.js y npm instalados en tu sistema.
+
+## Instalación
+
+1. Clona este repositorio a tu máquina local.
+2. Navega al directorio del proyecto y ejecuta `npm install` para instalar las dependencias.
+3. Ejecuta `ng serve` para iniciar la aplicación.
+4. Abre tu navegador y navega a `http://localhost:4200/` para ver la aplicación en funcionamiento.
